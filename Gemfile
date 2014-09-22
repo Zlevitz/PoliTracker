@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'spring',        group: :development
 # Bootstrap Gem for easy css
 gem 'bootstrap-sass'
+# User login handling
+gem 'devise', '~> 3.3.0'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
