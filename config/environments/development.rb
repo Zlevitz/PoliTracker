@@ -37,4 +37,7 @@ Rails.application.configure do
 
   # Required for Heroku and devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Required for paperclip
+  Paperclip.options[:command_path] = "/opt/ImageMagick/bin/"
 end
