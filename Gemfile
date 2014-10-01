@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -24,7 +25,10 @@ gem 'devise', '~> 3.3.0'
 # Used to add images in db and image uploads
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'cocaine', '~> 0.5.4'
+# Amazon S3 gem to store files over there
 gem 'aws-sdk', '~> 1.20.0'
+# jQuery masonry gem
+gem 'masonry-rails', '~>0.2.0'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
