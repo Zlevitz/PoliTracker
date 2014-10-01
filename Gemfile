@@ -24,6 +24,7 @@ gem 'devise', '~> 3.3.0'
 # Used to add images in db and image uploads
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'cocaine', '~> 0.5.4'
+gem 'aws-sdk', '~> 1.20.0'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
