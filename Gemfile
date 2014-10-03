@@ -29,6 +29,9 @@ gem 'cocaine', '~> 0.5.4'
 gem 'aws-sdk', '~> 1.20.0'
 # jQuery masonry gem
 gem 'masonry-rails', '~>0.2.0'
+# pagination of pages
+gem 'will_paginate', '~>3.0'
+gem 'will_paginate-bootstrap'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
