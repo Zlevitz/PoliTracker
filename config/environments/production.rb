@@ -77,7 +77,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Required for Heroku and devise
-  config.action_mailer.default_url_options = { host: 'http://onemonthclass.herokuapp.com/'}
+  config.action_mailer.default_url_options = { host: 'http://politracker.herokuapp.com/'}
 
   # Sets Paperclip to upload images to Amazon S3
   config.paperclip_defaults = {
