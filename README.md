@@ -7,17 +7,20 @@ Color pallete can be found using http://paletton.com/#uid=300110kllllaFw0g0qFqFg
 By [Zachary Levitz](http://bluewire.co)
 
 ## To Do:
+### Over All
 * Go back to Act_As_Votable and cache appropriate columns in order to have it run faster
-* Only allow bill updates on those users who have admin rights
-* Put limits on the length of the bill attributes
-* Titles inside the bill containers
-* Rename description field in DB to legislation
-* Alter default sizing on bill images
-* Bill fields have size limits but do not display them to when someone goes over the limit
-* Vote button styling, including indicating which way logged in user voted
-* Official summary page
+* drop pin able
+### Official profile page
 	* Contact information of official
+### On Bills
+* Only allow bill updates on those users who have admin rights
 * Summary for and against a bill
 * Politician video about why they voted the way they did
 * Agrigation of votes by politician compated to constituancy and so on
 * On individual bill page show the break down of votes. How voters voted, How senate boted, How house voted
+* Rename description field in DB to legislation
+* Add links to actual legislation
+* Alter default sizing on bill images in container
+* Put consious limits on the length of the bill attributes
+* Vote button styling, including indicating which way logged in user voted
+* Bill fields have size limits but do not display them to when someone goes over the limit
