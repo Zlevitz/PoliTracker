@@ -1,7 +1,9 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
 <div id="bills" class="transitions-enabled">
   <% @bills.each do |bill| %>
     <div class="billcontainer panel panel-default">
-      <%= image_tag bill.cover.url(:medium) %>
+      <%= link_to image_tag(bill.cover.url(:medium)), bill %>
       Title: <%= bill.title %>
       <br>
       Category: <%= bill.category %>
@@ -9,10 +11,14 @@
       Summary: <%= bill.summary %>
       <br>
       Legislation: <%= bill.description %>
-      <br>
-      <%= link_to 'Show', bill %>
-      <%= link_to 'Edit', edit_bill_path(bill) %>
-      <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="actions">
+        <%= link_to 'Edit', edit_bill_path(bill) %>
+        <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
   <% end %>
+</div>
+
+<div class="center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>

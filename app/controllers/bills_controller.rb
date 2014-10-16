@@ -4,7 +4,7 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.json
   def index
-    @bills = Bill.all
+    @bills = Bill.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /bills/1

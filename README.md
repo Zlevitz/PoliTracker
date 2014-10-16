@@ -12,3 +12,4 @@ By [Zachary Levitz](http://bluewire.co)
 * Put limits on the length of the bill attributes
 * Titles inside the bill containers
 * Rename description field in DB to legislation
+* Alter default sizing on bill images

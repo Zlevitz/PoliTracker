@@ -1,13 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= image_tag @bill.cover.url(:thumb) %>
-  <%= @bill.title %>
-  <%= @bill.category %>
-  <%= @bill.summary %>
-  <%= @bill.description %>
-</p>
-
-<%= link_to 'Edit', edit_bill_path(@bill) %> |
 <%= link_to 'Back', bills_path %>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default"> 
+			<div class="panel-heading center">
+				<%= image_tag @bill.cover.url(:medium) %>
+				<p><%= @bill.title %></p>
+			</div>
+			<div class="panel-body">
+				<p>
+					<strong>Category:</strong>
+				  <%= @bill.category %>
+				</p>
+				<p>
+				  <strong>Summary:</strong>
+				  <%= @bill.summary %>
+				</p>
+				  <strong>Legislation:</strong>
+				  <%= @bill.description %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<%= link_to 'Edit', edit_bill_path(@bill) %> <-Will only show up for admins
