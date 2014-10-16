@@ -1,33 +1,18 @@
-<h1>Listing bills</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Cover</th>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Summary</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bills.each do |bill| %>
-      <tr>
-        <td><%= image_tag bill.cover.url(:Medium) %></td>
-        <td><%= bill.title %></td>
-        <td><%= bill.category %></td>
-        <td><%= bill.summary %></td>
-        <td><%= bill.description %></td>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bill', new_bill_path %>
+<div id="bills" class="transitions-enabled">
+  <% @bills.each do |bill| %>
+    <div class="billcontainer panel panel-default">
+      <%= image_tag bill.cover.url(:medium) %>
+      Title: <%= bill.title %>
+      <br>
+      Category: <%= bill.category %>
+      <br>
+      Summary: <%= bill.summary %>
+      <br>
+      Legislation: <%= bill.description %>
+      <br>
+      <%= link_to 'Show', bill %>
+      <%= link_to 'Edit', edit_bill_path(bill) %>
+      <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
