@@ -13,3 +13,11 @@ By [Zachary Levitz](http://bluewire.co)
 * Titles inside the bill containers
 * Rename description field in DB to legislation
 * Alter default sizing on bill images
+* Bill fields have size limits but do not display them to when someone goes over the limit
+* Vote button styling, including indicating which way logged in user voted
+* Official summary page
+	* Contact information of official
+* Summary for and against a bill
+* Politician video about why they voted the way they did
+* Agrigation of votes by politician compated to constituancy and so on
+* On individual bill page show the break down of votes. How voters voted, How senate boted, How house voted

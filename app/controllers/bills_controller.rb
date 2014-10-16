@@ -61,6 +61,18 @@ class BillsController < ApplicationController
     end
   end
 
+  def upvote
+    @bill = Bill.find(params[:id])
+    @bill.upvote_by current_user
+    redirect_to bills_path
+  end
+
+  def downvote
+    @bill = Bill.find(params[:id])
+    @bill.downvote_by current_user
+    redirect_to bills_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bill

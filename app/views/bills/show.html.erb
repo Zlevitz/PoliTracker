@@ -19,6 +19,14 @@
 				  <strong>Legislation:</strong>
 				  <%= @bill.description %>
 				</p>
+				<% if user_signed_in? %>
+	        <div class="actions">
+	          <%= link_to "Yes", for_bill_path(@bill), method: :put %>
+	          <%= link_to "No", against_bill_path(@bill), method: :put %>
+	        </div>
+	      <% else %>
+	        <%= link_to "Log in to Vote", new_user_session_path %>
+	      <% end %>
 			</div>
 		</div>
 	</div>
