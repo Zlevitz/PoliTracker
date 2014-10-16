@@ -3,17 +3,22 @@
 <div id="bills" class="transitions-enabled">
   <% @bills.each do |bill| %>
     <div class="billcontainer panel panel-default">
-      <%= link_to image_tag(bill.cover.url(:medium)), bill %>
-      Title: <%= bill.title %>
-      <br>
-      Category: <%= bill.category %>
-      <br>
-      Summary: <%= bill.summary %>
-      <br>
-      Legislation: <%= bill.description %>
+      <p>
+        <%= link_to image_tag(bill.cover.url(:medium)), bill %>
+        <strong>Title:</strong> <%= bill.title %>
+      </p>
+      <p>
+        <strong>Category:</strong>  <%= bill.category %>
+      </p>
+      <p>
+        <strong>Summary:</strong> <%= bill.summary %>
+      </p>
+      <p>
+        <strong>Legislation:</strong>  <%= bill.description %>
+      </p>
       <div class="actions">
-        <%= link_to 'Edit', edit_bill_path(bill) %>
-        <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_bill_path(bill) %> 
+        <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %> <- Only Admin sees
       </div>
     </div>
   <% end %>
