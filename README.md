@@ -1,5 +1,5 @@
 # One Month Rails
 
-This is the pinteresting sample application for [*One Month Rails*](http://onemonthrails.com)
+This is the baisc mock up for the PoliTracker application.  Currently working under  [*Blue Wire Ventures*](http://bluewire.co)
 
 By [Zachary Levitz](http://bluewire.co)
