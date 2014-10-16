@@ -11,10 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field-group">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field-group">
+    <%= f.label :summary %><br>
+    <%= f.text_field :summary %>
+  </div>
+  <div class="field-group">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+  <div class="field-group">
+    <%= f.label :cover %><br>
+    <%= f.file_field :cover, class: "form-control" %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

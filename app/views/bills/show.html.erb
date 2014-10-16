@@ -2,6 +2,10 @@
 
 <p>
   <strong>Description:</strong>
+  <%= image_tag @bill.cover.url(:thumb) %>
+  <%= @bill.title %>
+  <%= @bill.category %>
+  <%= @bill.summary %>
   <%= @bill.description %>
 </p>
 

@@ -8,3 +8,4 @@ By [Zachary Levitz](http://bluewire.co)
 
 ## To Do:
 * Go back to Act_As_Votable and cache appropriate columns in order to have it run faster
+* Only allow bill updates on those users who have admin rights
