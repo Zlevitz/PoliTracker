@@ -8,4 +8,15 @@ class Bill < ActiveRecord::Base
  	validates :category, presence: true
  	validates :summary, presence: true
  	validates :description, presence: true
+
+ 	# Additional Attributes
+ 	def score
+  		self.get_upvotes.size - self.get_downvotes.size
+  end
+  def for
+  		self.get_upvotes.size
+  end
+  def against
+  		self.get_downvotes.size
+  end
 end
