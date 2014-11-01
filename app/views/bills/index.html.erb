@@ -1,5 +1,6 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
+<h1 id="Current" class="page-header">Current Bills</h1>
 <div id="bills" class="transitions-enabled">
   <% @bills.each do |bill| %>
     <div class="billcontainer panel panel-default">

@@ -19,6 +19,11 @@
 				  <strong>Legislation:</strong>
 				  <%= @bill.description %>
 				</p>
+				<div class = "Votes">
+        	Current Score: <%= @bill.score %> <br>
+        	For: <%= @bill.for %> <br>
+        	Against: <%= @bill.against %>
+      	</div>
 				<% if user_signed_in? %>
 	        <div class="actions">
 	          <%= link_to "Yes", for_bill_path(@bill), method: :put %>

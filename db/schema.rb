@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016163719) do
+ActiveRecord::Schema.define(version: 20141101040802) do
 
   create_table "bills", force: true do |t|
     t.string   "description"
@@ -24,7 +24,22 @@ ActiveRecord::Schema.define(version: 20141016163719) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
+
+  add_index "bills", ["cached_votes_down"], name: "index_bills_on_cached_votes_down"
+  add_index "bills", ["cached_votes_score"], name: "index_bills_on_cached_votes_score"
+  add_index "bills", ["cached_votes_total"], name: "index_bills_on_cached_votes_total"
+  add_index "bills", ["cached_votes_up"], name: "index_bills_on_cached_votes_up"
+  add_index "bills", ["cached_weighted_average"], name: "index_bills_on_cached_weighted_average"
+  add_index "bills", ["cached_weighted_score"], name: "index_bills_on_cached_weighted_score"
+  add_index "bills", ["cached_weighted_total"], name: "index_bills_on_cached_weighted_total"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
