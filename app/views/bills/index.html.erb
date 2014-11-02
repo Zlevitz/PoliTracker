@@ -26,10 +26,6 @@
         <div class="actions">
           <%= link_to "Yes", for_bill_path(bill), method: :put %>
           <%= link_to "No", against_bill_path(bill), method: :put %>
-          <p>
-            <%= link_to 'Edit', edit_bill_path(bill) %> 
-            <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %> <- Only Admin sees
-          </p>
         </div>
       <% else %>
         <%= link_to "Log in to Vote", new_user_session_path %>

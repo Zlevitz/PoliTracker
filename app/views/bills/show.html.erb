@@ -36,4 +36,7 @@
 		</div>
 	</div>
 </div>
-<%= link_to 'Edit', edit_bill_path(@bill) %> <-Will only show up for admins
+<% if current_user.admin? %>
+	<%= link_to 'Edit', edit_bill_path(@bill) %>
+	<%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
