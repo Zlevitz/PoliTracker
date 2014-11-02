@@ -7,6 +7,9 @@ By [Zachary Levitz](http://bluewire.co)
 ## To Do:
 ### Over All
 	* Rename user "name" to "username"
+	* Get forgot email to be sending out
+	* When I reset db it creates my basic user as well
+	* Autocreate 5 bills
 ### Official profile page
 	* Contact information of official
 ### On Bills
