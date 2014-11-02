@@ -6,7 +6,7 @@ By [Zachary Levitz](http://bluewire.co)
 
 ## To Do:
 ### Over All
-
+	* Rename user "name" to "username"
 ### Official profile page
 	* Contact information of official
 ### On Bills
