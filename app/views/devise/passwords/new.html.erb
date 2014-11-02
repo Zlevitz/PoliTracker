@@ -1,24 +1,13 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Forgot your password?</h1>
+<div class="authform">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+    <h3>Forgot your password?</h3>
+    <p>We'll send password reset instructions.</p>
+    <%= devise_error_messages! %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
     </div>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
+     <%= f.submit 'Reset Password', :class => 'button right' %>
+     <%# BEFORE USING NEED TO RESTYLE render "devise/shared/links" %>
+  <% end %>
 </div>

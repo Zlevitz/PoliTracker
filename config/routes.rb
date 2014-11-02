@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root "bills#index"
+  get "about" => "pages#about"
+
   resources :bills do
     member do
       put "for", to: "bills#upvote"
@@ -6,10 +9,9 @@ Rails.application.routes.draw do
     end
   end
   
+  #Must stay in this order or it will create a loop
   devise_for :users
-  root "bills#index"
-  get "about" => "pages#about" # creates about_path
-
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
