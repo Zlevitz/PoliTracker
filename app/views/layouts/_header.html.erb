@@ -32,6 +32,12 @@
               </ul>
             </li>
           <% end %>
+          <% if current_user.voter? %>
+            <li><%= link_to "Profile", stumpvoter_path %></li>
+          <% end %>
+          <% if current_user.politician? %>
+            <li><%= link_to "Profile", stumprep_path %></li>
+          <% end %>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li> 
         <% else %> 

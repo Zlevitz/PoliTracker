@@ -1,0 +1,27 @@
+<%= form_for(@representative) do |f| %>
+  <% if @representative.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@representative.errors.count, "error") %> prohibited this representative from being saved:</h2>
+
+      <ul>
+      <% @representative.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-group">
+    <%= f.label :headshot %><br>
+    <%= f.file_field :headshot, class: "form-control" %>
+  </div>
+
+  <div class="field-group">
+    <%= f.label :party %><br>
+    <%= f.text_field :party, class: "form-control" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

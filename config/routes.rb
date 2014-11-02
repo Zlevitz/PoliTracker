@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  resources :representatives
+
+  resources :voters
+
   root "bills#index"
   get "about" => "pages#about"
-
+  get "stumprep" => "pages#stumprepresentative"
+  get "stumpvoter" => "pages#stumpvoter"
+  
   resources :bills do
     member do
       put "for", to: "bills#upvote"

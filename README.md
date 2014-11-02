@@ -10,8 +10,8 @@ By [Zachary Levitz](http://bluewire.co)
 	* Get forgot email to be sending out
 	* When I reset db it creates my basic user as well
 	* Autocreate 5 bills
-### Official profile page
-	* Contact information of official
+### Profile pages
+	* Destroy all information about the voter when they switch to politician
 ### On Bills
 	* Only allow bill updates on those users who have admin rights
 	* Summary for and against a bill

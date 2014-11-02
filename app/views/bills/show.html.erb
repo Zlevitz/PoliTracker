@@ -38,5 +38,5 @@
 </div>
 <% if current_user.admin? %>
 	<%= link_to 'Edit', edit_bill_path(@bill) %>
-	<%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'Destroy', @bill, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
