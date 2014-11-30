@@ -1,39 +1,50 @@
-<%= render 'pages/home' unless user_signed_in? %>
+<body>
+  <%= render 'pages/home' unless user_signed_in? %>
 
-<h1 id="Current" class="page-header">Current Bills</h1>
-<div id="bills" class="transitions-enabled">
-  <% @bills.each do |bill| %>
-    <div class="billcontainer panel panel-default">
-      <p>
-        <%= link_to image_tag(bill.cover.url(:medium)), bill %>
-        <strong>Title:</strong> <%= bill.title %>
-      </p>
-      <p>
-        <strong>Category:</strong>  <%= bill.category %>
-      </p>
-      <p>
-        <strong>Summary:</strong> <%= bill.summary %>
-      </p>
-      <p>
-        <strong>Legislation:</strong>  <%= bill.description %>
-      </p>
-      <div class = "Votes">
-        Current Score: <%= bill.score %> <br>
-        For: <%= bill.for %> <br>
-        Against: <%= bill.against %>
-      </div>
-      <% if user_signed_in? %>
-        <div class="actions">
-          <%= link_to "Yes", for_bill_path(bill), method: :put %>
-          <%= link_to "No", against_bill_path(bill), method: :put %>
+  <h1 id="Current" class="page-header">Current Bills</h1>
+  <div id="bills" class="transitions-enabled">
+    <% @bills.each do |bill| %>
+      <div class="billcontainer panel panel-default">
+        <p>
+          <%= link_to image_tag(bill.cover.url(:medium)), bill %>
+          <strong>Title:</strong> <%= bill.title %>
+        </p>
+        <p>
+          <strong>Category:</strong>  <%= bill.category %>
+        </p>
+        <p>
+          <strong>Summary:</strong> <%= bill.summary %>
+        </p>
+        <p>
+          <strong>Legislation:</strong>  <%= bill.description %>
+        </p>
+        <div class = "Votes">
+          Current Score: <%= bill.score %> <br>
+          For: <%= bill.for %> <br>
+          Against: <%= bill.against %>
         </div>
-      <% else %>
-        <%= link_to "Log in to Vote", new_user_session_path %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+        <% if user_signed_in? %>
+          <div class="actions">
+            <div class="col-md-12">
+              <div class="ui-group-buttons">
+                <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                <div class="or or-lg"></div>
+                <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+              </div>
+            </div>
+            <div class="ui-group-buttons">
+            <%= button_to "Yes", for_bill_path(bill), method: :put, :html => { :class => "btn btn-success btn-lg", :role => "button" } %>
+            </div>
+            <%= link_to "No", against_bill_path(bill), method: :put %>
+          </div>
+        <% else %>
+          <%= link_to "Log in to Vote", new_user_session_path %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-<div class="center">
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-</div>
+  <div class="center">
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  </div>
+</body>

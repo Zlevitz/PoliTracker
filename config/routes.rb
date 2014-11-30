@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get "stumprep" => "pages#stumprepresentative"
   get "stumpvoter" => "pages#stumpvoter"
-  
+  get "stumppolitician" => "pages#politician"
   resources :bills do
     member do
       put "for", to: "bills#upvote"
